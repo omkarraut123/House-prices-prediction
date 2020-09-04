@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Pune Real Estate</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+
+<body>
+
+
+
+ <div class="login">
+	<h1>Pune Real Estate</h1>
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form  action="{{ url_for('predict')}}"method="post">
+
+        <!--     	<input type="text" name="Location" placeholder="Location" required="required" />
+
+        -->
+
+
+        <input type="text" name="BHK" placeholder="Number of BHK" required="required" />
+        <input type="text" name="Bath" placeholder="Number of Bathrooms" required="required" />
+        <input type="text" name="Balcony" placeholder="Number of Balconies" required="required" />
+        <input type="text" name="Sqft" placeholder=" Total Sqft" required="required" />
+        <div id="myForm11">
+        </div>
+		<label for="area_type">Choose Area Type:</label>
+        <select id="area_type" name="area_type" required="required">
+             <option value="Built-up  Area">Built-up  Area</option>
+             <option value="Carpet  Area">Carpet  Area</option>
+             <option value="Plot  Area">Plot  Area</option>
+        </select>
+        <br>
+        <label for="availability">Choose Availability:</label>
+        <select id="availability" name="availability" required="required">
+             <option value="Ready To Move">Ready To Move</option>
+             <option value="Not Ready">Not Ready</option>
+        </select>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+<script>
+var myParent = document.body;
+
+//Create array of options to be added
+var array = ['Alandi Road',
+       'Ambegaon Budruk', 'Anandnagar', 'Aundh', 'Aundh Road', 'Balaji Nagar',
+       'Baner', 'Baner road', 'Bhandarkar Road', 'Bhavani Peth', 'Bibvewadi',
+       'Bopodi', 'Budhwar Peth', 'Bund Garden Road', 'Camp', 'Chandan Nagar',
+       'Dapodi', 'Deccan Gymkhana', 'Dehu Road', 'Dhankawadi', 'Dhayari Phata',
+       'Dhole Patil Road', 'Erandwane', 'Fatima Nagar',
+       'Fergusson College Road', 'Ganesh Peth', 'Ganeshkhind', 'Ghorpade Peth',
+       'Ghorpadi', 'Gokhale Nagar', 'Gultekdi', 'Guruwar peth', 'Hadapsar',
+       'Hadapsar Industrial Estate', 'Hingne Khurd', 'Jangali Maharaj Road',
+       'Kalyani Nagar', 'Karve Nagar', 'Karve Road', 'Kasba Peth', 'Katraj',
+       'Khadaki', 'Khadki', 'Kharadi', 'Kondhwa', 'Kondhwa Budruk',
+       'Kondhwa Khurd', 'Koregaon Park', 'Kothrud', 'Law College Road',
+       'Laxmi Road', 'Lulla Nagar', 'Mahatma Gandhi Road', 'Mangalwar peth',
+       'Manik Bagh', 'Market yard', 'Model colony', 'Mukund Nagar', 'Mundhawa',
+       'Nagar Road', 'Nana Peth', 'Narayan Peth', 'Narayangaon', 'Navi Peth',
+       'Padmavati', 'Parvati Darshan', 'Pashan', 'Paud Road', 'Pirangut',
+       'Prabhat Road', 'Pune Railway Station', 'Rasta Peth', 'Raviwar Peth',
+       'Sadashiv Peth', 'Sahakar Nagar', 'Salunke Vihar', 'Sasson Road',
+       'Satara Road', 'Senapati Bapat Road', 'Shaniwar Peth', 'Shivaji Nagar',
+       'Shukrawar Peth', 'Sinhagad Road', 'Somwar Peth', 'Swargate',
+       'Tilak Road', 'Uruli Devachi', 'Vadgaon Budruk', 'Viman Nagar',
+       'Vishrant Wadi', 'Wadgaon Sheri', 'Wagholi', 'Wakadewadi', 'Wanowrie',
+       'Warje', 'Yerawada'];
+
+//Create and append select list
+var selectList = document.createElement("select");
+selectList.id = "location";
+selectList.name="location"
+
+var newlabel = document.createElement("Label");
+newlabel.setAttribute("for","location");
+newlabel.innerHTML = "Select Location:     ";
+
+var myForm=document.getElementById ("myForm11");
+myForm.appendChild(newlabel);
+myForm.appendChild(selectList);
+
+//Create and append the options
+for (var i = 0; i < array.length; i++) {
+    var option = document.createElement("option");
+    option.value = array[i];
+    option.text = array[i];
+    selectList.appendChild(option);
+}
+</script>
+
+</body>
+</html>
