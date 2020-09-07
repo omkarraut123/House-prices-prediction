@@ -20,6 +20,8 @@ We can't determine everything by just looking at the data. We need to dig deeper
  Here, we impute missing values and clean string variables (remove space, irregular tabs, data time format) and anything that shouldn't be there. This step is usually followed along with the data exploration stage. 
  ## 6. Feature Engineering: 
  Now, we create and add new features to the data set. Most of the ideas for these features come during the hypothesis generation stage. 7. Model Training: Using a suitable algorithm, we train the model on the given data set. 
+ ## 7. Model Training: 
+ Using a suitable algorithm ,multiple linear regression,decision tree,random forest etc. we train the model on the given data set. 
  ## 8. Model Evaluation: 
  Once the model is trained, we evaluate the model's performance using a suitable error metric. Here, we also look for variable importance, i.e., which variables have proved to be significant in determining the target variable. And, accordingly we can shortlist the best variables and train the model again. 
  ## 9. Model Testing: 
