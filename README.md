@@ -19,7 +19,7 @@ We can't determine everything by just looking at the data. We need to dig deeper
 ## 5.Data Preprocessing: 
  Here, we impute missing values and clean string variables (remove space, irregular tabs, data time format) and anything that shouldn't be there. This step is usually followed along with the data exploration stage. 
  ## 6. Feature Engineering: 
- Now, we create and add new features to the data set. Most of the ideas for these features come during the hypothesis generation stage. 7. Model Training: Using a suitable algorithm, we train the model on the given data set. 
+ Now, we create and add new features to the data set. Most of the ideas for these features come during the hypothesis generation stage.
  ## 7. Model Training: 
  Using a suitable algorithm ,multiple linear regression,decision tree,random forest etc. we train the model on the given data set. 
  ## 8. Model Evaluation: 
